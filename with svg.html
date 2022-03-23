@@ -1,0 +1,149 @@
+<script type="text/javascript">
+    try {
+
+       let i=0;
+        const tt = ({ animationName, target }) =>
+         {
+            if (animationName === 'chatbox-loaded')
+             {
+                
+               if( target.querySelector('img'))
+                {
+                    target.style.marginRight ="8.5vh";
+                    target.querySelector('img').src="https://tnt-6178.twil.io/Test-Chat-Button.png" 
+                    target.querySelector('img').style.top="87vh";
+                    target.querySelector('img').style.height="90px";
+                    target.querySelector('img').style.width="90px";
+                        
+                    function hideLabelFunction (){
+            if( document.querySelector("#tnt_label")){document.querySelector("#tnt_label").remove();}
+                      
+          }
+                    
+                  let elemDiv = document.createElement('div');
+                  elemDiv.id="tnt_label";
+                  elemDiv.innerHTML=` <div id="tnt_top"  style="display: flex;justify-content: end;"><svg  width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zM11.4 10l2.83-2.83-1.41-1.41L10 8.59 7.17 5.76 5.76 7.17 8.59 10l-2.83 2.83 1.41 1.41L10 11.41l2.83 2.83 1.41-1.41L11.41 10z"></path></svg></div>
+                    <div id="tnt_span">
+                    Hey! I'm Home Depot's Virtual Assistant. What can I help you with today?
+                    </div>`.trim();
+              
+
+              //  target.insertBefore(elemDiv, target.querySelector('img'));
+              document.body.appendChild(elemDiv);
+                document.querySelector("#tnt_top").addEventListener('click',hideLabelFunction);
+                
+                
+                
+                
+                }
+                    
+            }
+        }
+         
+
+        document.addEventListener("animationstart", tt, false)
+		document.addEventListener("MSAnimationStart", tt, false)
+		document.addEventListener("webkitAnimationStart", tt, false)
+        
+    } catch (error) 
+    {
+        
+    }
+</script>
+
+<style>
+
+#tnt_btn {
+  border-radius: 50%;
+  padding: 0.5em;
+  width: 9px;
+  height: 9px;
+  border: 1px solid black;
+  /* color: blue; */
+  position: relative;
+  background:black;
+  margin-left: 190px;
+  cursor:pointer;
+}
+
+#tnt_btn::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #EEEEEE;
+  width: 2px;
+  left: 5px;
+  top: 1px;
+  bottom: 2px;
+  transform: rotate(45deg);
+}
+#tnt_btn::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #EEEEEE;
+  height: 2px;
+  top:4.7px;
+  left: 1px;
+  right: 1.5px;
+  transform: rotate(45deg);
+}
+
+#tnt_label{
+ 
+  height:70px;
+  width:218px;
+  display:flex;
+  position: absolute;
+  top: 74vh;
+    right: 0;
+   
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 107158;
+}
+#tnt_span{
+    background:#EEEEEE;
+   height:60px;
+   width:210px;
+  /* margin-top:9px; */
+  color:#181A1A;
+  
+  font-size: 16px;
+  /* padding: 2px; */
+  padding-left: 10px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  
+}
+#tnt_top{
+    /* background:white; */
+    height: 30px;
+    width:218px ;
+    cursor:pointer;
+
+}
+ </style>
+<style id="styles-chat">
+	@keyframes chatbox-loaded {
+		from {
+			opacity: 0.99;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+   
+   
+    
+    .LPMcontainer {
+        animation: chatbox-loaded 0.001s;
+    }
+    
+</style>
